@@ -6,7 +6,7 @@ export default RegistrationScreen = () => {
 
     return (
         <View>
-            <ImageBackground source={background}>
+            <ImageBackground source={background} style={background}>
             
                 <View style={styles.container}>
                     <TouchableOpacity style={styles.addUserPhoto}>
@@ -22,11 +22,13 @@ export default RegistrationScreen = () => {
                     style={styles.input}
                 placeholder="Адреса електронної пошти"
             />
-                <TextInput
+                    <View>
+                        <TextInput
                     style={styles.inputLast}
                         placeholder="Пароль"
                     ></TextInput>
                     <Text style={styles.showTxt}>Показати</Text>
+                </View>
                     
                     <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Зареєстуватися</Text></TouchableOpacity>
                     <Text style={styles.goToLoginTxt}>Вже є акаунт? Увійти</Text>
@@ -47,7 +49,14 @@ const styles = StyleSheet.create({
         zIndex:3,
         top: width * -0.03,
         
-  },
+    },
+    background: {
+           flex: 1,
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    resizeMode: 'cover,'
+    },
    
       userImage: {
     position: 'absolute',
@@ -72,7 +81,8 @@ const styles = StyleSheet.create({
     textAlign:"center",
     backgroundColor: "#fff",
         color: "#212121",
-        // fontWeight:500,
+        fontFamily: 'Roboto-Medium',
+  
         fontSize: 30,
     marginBottom:33,
     
@@ -104,16 +114,20 @@ const styles = StyleSheet.create({
         borderStyle: 'solid',
         borderColor: "#E8E8E8",
         borderWidth: 1,
-        fontSize:16,
+            fontSize: 16,
+        position:'relative'
     },
     showTxt: {
-         fontFamily: 'Roboto-Regular',
+        fontFamily: 'Roboto-Medium',
+        position: "absolute",
+        left: width * 0.75,
+    
     fontSize: 16,
     lineHeight: 19,
         color: '#1B4371',
-        position: 'absolute',
-    top: 312,
-    right: width * 0.07,
+  
+    top:height*0.024
+    
     },
     button: {
         backgroundColor: '#FF6C00',

@@ -13,11 +13,13 @@ export default LoginScreen = () => {
                     style={styles.input}
                 placeholder="Адреса електронної пошти"
             />
-                <TextInput
+                 <View>
+                        <TextInput
                     style={styles.inputLast}
                         placeholder="Пароль"
                     ></TextInput>
                     <Text style={styles.showTxt}>Показати</Text>
+                </View>
                     
                     <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Увійти</Text></TouchableOpacity>
                     <Text style={styles.goToRegTxt}>Немає акаунту? Зареєструватися</Text>
@@ -27,7 +29,7 @@ export default LoginScreen = () => {
     )
 }
 const width = Dimensions.get('window').width;
-
+const height = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     addUserPhoto: {
@@ -53,11 +55,13 @@ const styles = StyleSheet.create({
     backgroundColor:"#fff"    
     },
     loginText: {
+        fontFamily: 'Roboto-Regular',
+    
       marginTop:32,
     textAlign:"center",
     backgroundColor: "#fff",
         color: "#212121",
-        // fontWeight:500,
+ 
         fontSize: 30,
     marginBottom:33,
     
@@ -92,13 +96,16 @@ const styles = StyleSheet.create({
         fontSize:16,
     },
     showTxt: {
-         fontFamily: 'Roboto-Regular',
+        fontFamily: 'Roboto-Regular',
+        position: "absolute",
+        left: width * 0.77,
+    
     fontSize: 16,
     lineHeight: 19,
         color: '#1B4371',
-        position: 'absolute',
-    top: 185,
-    right: width * 0.07,
+  
+    top:height*0.02
+    
     },
     button: {
         backgroundColor: '#FF6C00',
