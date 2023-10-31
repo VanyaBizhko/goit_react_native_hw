@@ -14,7 +14,11 @@ import {
 } from "react-native";
 import background from "../../assets/photo/background.jpg";
 import add from "../../assets/photo/add.png";
+import { useNavigation } from '@react-navigation/native';
+
+
 export default RegistrationScreen = () => {
+  const navigation = useNavigation();
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const[password, setPassword] = useState("");  
@@ -28,7 +32,7 @@ export default RegistrationScreen = () => {
      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <View>
         <ImageBackground source={background} style={background}>
-          <KeyboardAvoidingView style={styles.kbPosition} behavior={Platform.OS == "ios" ? "height" : "height"}>
+          <KeyboardAvoidingView style={styles.kbPosition} behavior={Platform.OS == "ios" ? "padding" : "height"}>
         <View style={styles.container}>
           <TouchableOpacity style={styles.addUserPhoto}>
             <Image style={styles.userImage}></Image>
@@ -53,10 +57,10 @@ export default RegistrationScreen = () => {
             <Text style={styles.showTxt}>Показати</Text>
           </View>
 
-          <TouchableOpacity style={styles.button} onPress={onLogin}>
+          <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Home')}>
             <Text style={styles.buttonText}>Зареєстуватися</Text>
           </TouchableOpacity>
-          <Text style={styles.goToLoginTxt}>Вже є акаунт? Увійти</Text>
+         <TouchableOpacity onPress={()=>navigation.navigate('Login')}><Text style={styles.goToLoginTxt}>Вже є акаунт? Увійти</Text></TouchableOpacity>
           </View>
           </KeyboardAvoidingView>
       </ImageBackground>
