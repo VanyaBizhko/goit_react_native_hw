@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
     marginTop: 273,
     // marginTop:500,
     backgroundColor: "#fff",
+    height:height*0.55,
     // paddingBottom:100,
   },
   loginText: {

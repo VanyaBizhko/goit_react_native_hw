@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
     borderTopEndRadius: 25,
     marginTop: width * 0.55,
     backgroundColor: "#fff",
+    height:height*0.68,
   },
   registrationText: {
     marginTop: 60,
